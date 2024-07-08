@@ -31,7 +31,7 @@ public class Controller {
     }
 
     @GetMapping("/minus")
-    public String minus(@RequestParam Integer value1, @RequestParam Integer value2){
+    public String minus(@RequestParam(required = false) Integer value1, @RequestParam(required = false) Integer value2){
         if (value1 == null || value2 == null){
             return "Оба значения должны быть введены";
         }
@@ -40,7 +40,7 @@ public class Controller {
     }
 
     @GetMapping("/multiple")
-    public String multiple(@RequestParam Integer value1, @RequestParam Integer value2){
+    public String multiple(@RequestParam(required = false) Integer value1, @RequestParam(required = false) Integer value2){
         if (value1 == null || value2 == null){
             return "Оба значения должны быть введены";
         }
@@ -49,7 +49,7 @@ public class Controller {
     }
 
     @GetMapping("/divide")
-    public String divide(@RequestParam Integer value1, @RequestParam Integer value2){
+    public String divide(@RequestParam(required = false) Integer value1, @RequestParam(required = false) Integer value2){
         if (value1 == null || value2 == null){
             return "Оба значения должны быть введены";
         } else if (value2 == 0) {

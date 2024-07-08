@@ -1,6 +1,6 @@
 package com.skypro.calculatorTest.ServiceCalculator;
 
-import com.skypro.calculatorTest.exeptions.DivideNotNull;
+import com.skypro.calculatorTest.exeptions.DivideByZeroException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -29,7 +29,7 @@ public class ServiceCalculator implements CalculatorInterface {
     @Override
     public Integer divide(int value1, int value2) {
         if (value2 == 0){
-            throw new DivideNotNull("Делить на ноль нельзя");
+            throw new DivideByZeroException("Делить на ноль нельзя");
         }
         return value1/value2;
     }

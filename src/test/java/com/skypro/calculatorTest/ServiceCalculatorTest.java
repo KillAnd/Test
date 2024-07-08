@@ -1,10 +1,9 @@
 package com.skypro.calculatorTest;
 
 import com.skypro.calculatorTest.ServiceCalculator.ServiceCalculator;
-import com.skypro.calculatorTest.exeptions.DivideNotNull;
+import com.skypro.calculatorTest.exeptions.DivideByZeroException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.util.Assert;
 
 public class ServiceCalculatorTest {
 
@@ -63,7 +62,7 @@ public class ServiceCalculatorTest {
         int value1 = 100;
         int value2 = 0;
 
-        Assertions.assertThrowsExactly(DivideNotNull.class,
+        Assertions.assertThrowsExactly(DivideByZeroException.class,
                 () -> serviceCalculator.divide(value1,value2) );
 
     }
